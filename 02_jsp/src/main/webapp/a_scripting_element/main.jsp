@@ -20,16 +20,16 @@
 	     3) <% Java 코드 작성 %>
 	 --%>
 	 
-	 	   <%
+	 	 <%
 	   	 int sum = 0;
 	 	   int ranNum = getRandom();
 	   	 for(int i=1; i<=ranNum; i++){
 		   	sum += i;
 	  	 }
-	   	 System.out.println("덧셈결과: " + sum);
+	   	 System.out.println("덧셈결과: " + sum); // System.otu : PrintStream(콘솔창) 에 출력
 	   %>
 	   
-	   <b>덧셈결과: <% out.println(sum); %></b> <br>
+	   <b>덧셈결과: <% out.println(sum); %></b> <br> <!--  out : JspWriter(화면)에 출력 -->
 	 <%--
 	   2. 표현식 (Expression)
 	      1) Java에서의 값(변수, 메소드반환)을 출력할 때 사용
