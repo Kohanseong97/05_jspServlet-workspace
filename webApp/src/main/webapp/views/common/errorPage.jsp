@@ -8,33 +8,26 @@
 </head>
 <body>
 
+
 	<div class="container border -3">
 		<!-- 가운데 배치 -->
 
 		<!-- Header, Nav start -->
-		<%@ include file="/views/common/header.jsp" %>
+		<%@ include file="/views/common/header.jsp"%>
 		<!-- Header, Nav end -->
 
-		<!-- Section start -->
 		<section class="row m-3" style="min-height: 500px">
 
-      <div class="container border p-5 m-4 rounded">
-        <h2 class="m-4">해당 페이지의 내용이 보여져야되는 자리</h2>
 
+			<div class="container border p-5 m-4 rounded">
+				<h2 class="m-4" style="color: orangered;"><%= request.getAttribute("msg") %></h2>
+				
+				
+
+				<!-- Footer start -->
+				<%@ include file="/views/common/footer.jsp"%>
+				<!-- Footer end -->
 
 			</div>
-
-		</section>
-		<!-- Section end -->
-
-
-		<!-- Footer start -->
-    <%@ include file="/views/common/footer.jsp" %>
-		<!-- Footer end -->
-
-	</div>
-
-
-
 </body>
 </html>

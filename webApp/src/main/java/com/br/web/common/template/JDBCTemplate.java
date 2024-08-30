@@ -30,7 +30,7 @@ public class JDBCTemplate {
 //		paces\05_jspServlet-workspace\webApp\src\main\webap\WEB-INF\classes\db\config\driver.properties
 		
 		try {
-			prop.load(new FileInputStream("resources/driver.properties"));
+			prop.load(new FileInputStream(filePath));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
