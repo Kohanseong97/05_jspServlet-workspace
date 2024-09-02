@@ -19,9 +19,12 @@ public class MemberService {
 			return loginUser;
 		}
 		
-		public int insertMember(Member m) {
-			Connection conn = getConnection();
-			int result = mDao.insertMember(conn, m);
-		}
+//		public int insertMember(Member m) {
+//			Connection conn = getConnection();
+//			int result = mDao.insertMember(conn, m);
+//			
+//			if(result > 0)
+//							
+//		}
 		
 }

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.br.web.member.model.vo.Member;
+import com.br.web.member.service.MemberService;
 
 /**
  * Servlet implementation class MemberInsertController
@@ -46,10 +47,24 @@ public class MemberInsertController extends HttpServlet {
 		
 		Member m = new Member(userId, userPwd, userName, phone, email, address, interest);
 		
-		// 서비스 호출 (쿼리실행)
-		int result = new MemberService();
+		// 1. 서비스 호출 (쿼리실행)
+//		int result = new MemberService().insertMember(m);
 		
-		// 응답
+		// 2. 응답
+//		if(result > 0) {
+//			
+//			request.getSession().setAttribute("alertMsg", "성공적으로 회원가입 되었습니다.");
+//			response.sendRedirect(request.getContextPath());
+//		}else {
+			/*
+			 * * 회원가입 실패
+			 *   ㄴ 응답페이지 : 에러페이지
+			 *   ㄴ 응답데이터 : "회원가입 실패" 메세지 (해당 응답페이지에서만 필요
+			 */
+			
+//			request.setAttribute("","회원가입 실패");
+//			request.setRequestDispatcher("/views/common/errorPage.jsp").forward(request,)
+//		}
 	}
 
 	/**

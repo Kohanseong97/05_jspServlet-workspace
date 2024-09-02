@@ -1,0 +1,193 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap 사용을 위한 CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ------------------------ -->
+</head>
+
+<body>
+
+    <div class="container p-3"> <!-- 가운데 배치 -->
+
+        <!-- Header, Nav, start--> <!-- 어떤 페이지든 동일하게 보여지게-->
+				<%@ include file="/views/common/header.jsp" %>
+        <!-- Header, Nav, end-->
+        <!-- header.jsp include 표현할 예정-->
+
+        <!-- Section start-->
+        <section class="row m-3" style="min-height: 500px;">
+
+            <div class="container border p-5 m-4 rounded">
+                <h2 class="m-4">마이페이지</h2>
+
+                <form action="" method="">
+                    <table class="table">
+                        <tr>
+                            <th>* 아이디</th>
+                            <td><input type="text" class="form-control" placeholder="Enter Your ID" value="user01"
+                                    readonly></td>
+                        </tr>
+                        <tr>
+                            <th>* 이름</th>
+                            <td><input type="text" class="form-control" placeholder="Enter Your Name" value="홍길동"
+                                    required></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;&nbsp;전화번호</th>
+                            <td><input type="text" class="form-control" placeholder="Enter Your Phone (- include)"
+                                    value="010-1111-2222"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;&nbsp;이메일</th>
+                            <td><input type="text" class="form-control" placeholder="Enter Your Email (@ include)"
+                                    value="user01@br.com"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;&nbsp;주소</th>
+                            <td><input type="text" class="form-control" placeholder="Enter Your Adress"
+                                    value="경기도 부천시 상동"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;&nbsp;관심분야</th>
+                            <td>
+                                <input type="checkbox" name="interest" value="MMA" id="mma">
+                                <label for="">MMA</label>
+                                <input type="checkbox" name="interest" value="복싱" id="boxing" checked>
+                                <label for="">복싱</label>
+                                <input type="checkbox" name="interest" value="레슬링" id="wrestling" checked>
+                                <label for="">레슬링</label>
+                                <input type="checkbox" name="interest" value="주짓수" id="jitsu">
+                                <label for="">주짓수</label>
+                                <input type="checkbox" name="interest" value="킥복싱" id="kick">
+                                <label for="">킥복싱</label>
+                                <input type="checkbox" name="interest" value="유도" id="judo">
+                                <label for="">유도</label>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <br><br>
+
+                    <div align="center">
+                        <button type="submit" class="btn btn-primary btn-sm">정보변경</button>
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
+                            data-target="#changePwdModal">비밀번호변경</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal"
+                            data-target="modal">회원탈퇴</button>
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+        <!-- Section end-->
+
+        <!-- Footer start-->
+				<%@ include file="/views/common/footer.jsp"%>
+        <!-- Footer end-->
+
+
+    </div>
+
+    <!-- 비밀번호 변경용 Modal -->
+    <!-- The Modal -->
+    <div class="modal" id="changePwdModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">비밀번호 변경</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" method=""></form>
+                    <table align="center">
+                        <tr>
+                            <th>* 현재 비밀번호</th>
+                            <td><input type="password" class="form-control" required></td>
+                        </tr>
+                        <tr>
+                            <th>* 변경할 비밀번호</th>
+                            <td><input type="password"class="form-control" required></td>
+                        </tr>
+                        <tr>
+                            <th>* 변경할 비밀번호 재입력</th>
+                            <td><input type="passwor" class="form-control" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center; padding-top: 10px;" >
+                                <button type="submit" class="btn btn-warning btn-sm">비밀번호 변경</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="modal">
+                    <form action="" method=""></form>
+                    <table align="center">
+                        <tr>
+                            <th>
+                                탈퇴 후 복구가 불가능합니다. <br>
+                                정말로 탈퇴하시겠습니까?
+                            </th>
+                            <td><input type="password" class="form-control" required></td>
+                        </tr>
+                        <tr>
+                            <th>현재비밀번호</th>
+                            <td><input type="password"class="form-control" required></td>
+                        </tr>
+                        <tr>
+                            <th>* 변경할 비밀번호 재입력</th>
+                            <td><input type="passwor" class="form-control" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center; padding-top: 10px;" >
+                                <button type="submit" class="btn btn-danger btn-sm">회원탈퇴</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+</body>
+</html>

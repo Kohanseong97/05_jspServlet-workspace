@@ -23,7 +23,16 @@ header {color: black;}
 <%
 	String contextPath = request.getContextPath(); // "/web"
 	Member loginUser = (Member) session.getAttribute("loginUser");
+
+	String alertMsg = (String)session.getAttribute("alertMsg");
+
 %>
+
+<% if(alertMsg != null) { %>
+<script>
+  alert('<%=alertMsg%>');
+</script>
+<% session.removeAttribute("alertMsg");} %>
 
 <header class="row m-3">
 	<div class="col-3 d-flex justify-content-center align-items-center">
